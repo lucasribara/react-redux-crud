@@ -33,7 +33,7 @@ const getPublished = () => {
     return http.get("/tutorials/published");
 }
 
-const TutorialService = {
+const TutorialDataService = {
     getAll,
     get,
     create,

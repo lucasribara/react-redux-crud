@@ -1,11 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import AddTutorial from "./components/AddTutorial";
-//import Tutorial from "./components/Tutorial";
-//import TutorialsList from "./components/TutorialsList";
+import {AddTutorial} from "./components/AddTutorial";
+import Tutorial from "./components/Tutorial";
+import TutorialsList from "./components/TutorialsList";
 
 function App() {
   return (
@@ -29,11 +29,11 @@ function App() {
       </nav>
 
       <div className="container mt-3">
-        <Switch>
-          <Route exact path={["/", "/tutorials"]} component={<div>Some list</div>} />
-          <Route exact path="/add" component={AddTutorial} />
-          {/* <Route path="/tutorials/:id" component={Tutorial} /> */}
-        </Switch>
+        <Routes>
+          <Route path={"/"} component={<TutorialsList/>} />
+          <Route path="/add" component={<AddTutorial/>} />
+          <Route path="/tutorials/:id" component={<Tutorial/>} />
+        </Routes>
       </div>
     </Router>
   );
