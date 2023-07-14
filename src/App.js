@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import {AddTutorial} from "./components/AddTutorial";
+import AddTutorial from "./components/AddTutorial";
 import Tutorial from "./components/Tutorial";
 import TutorialsList from "./components/TutorialsList";
 
@@ -30,9 +30,10 @@ function App() {
 
       <div className="container mt-3">
         <Routes>
-          <Route path={"/"} component={<TutorialsList/>} />
-          <Route path="/add" component={<AddTutorial/>} />
-          <Route path="/tutorials/:id" component={<Tutorial/>} />
+          <Route path={"/"} element={<TutorialsList/>} />
+          <Route path={"/tutorials"} element={<TutorialsList/>} />
+          <Route path="/add" element={<AddTutorial/>} />
+          <Route path="/tutorials/:id" element={<Tutorial/>} />
         </Routes>
       </div>
     </Router>

@@ -27,8 +27,9 @@ const Tutorial = (props) => {
   };
 
   useEffect(() => {
-    getTutorial(props.match.params.id);
-  }, [props.match.params.id]);
+    const tutId = window.location.pathname
+    getTutorial(tutId.split("/")[2]);
+  }, []);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
