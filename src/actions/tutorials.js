@@ -92,19 +92,19 @@ import {
     }
   };
   
-//TODO: 
-//   export const findTutorialsByTitle = (title) => async (dispatch) => {
-//     try {
-//       const res = await TutorialDataService.findByTitle(title);
-  
-//       dispatch({
-//         type: RETRIEVE_TUTORIALS,
-//         payload: res.data,
-//       });
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
+
+  export const findTutorialsByTitle = (title) => async (dispatch) => {
+    try {
+      const res = await TutorialDataService.findByTitle(title);
+
+      dispatch({
+        type: RETRIEVE_TUTORIALS,
+        payload: res.data,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
 export const publishedTutorials = () => async (dispatch) => {
     try {

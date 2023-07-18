@@ -24,10 +24,10 @@ const remove = (id) => {
 const removeAll = () => {
     return http.delete(`/tutorials`);        
 }
-//TODO
-// findByTitle(title) {
-//     return http.get(`/tutorials?${title}`);        
-// }
+
+const findByTitle = (title) => {
+    return http.get(`/tutorials?title=${title}`);        
+}
 
 const getPublished = () => {
     return http.get("/tutorials/published");
@@ -40,6 +40,7 @@ const TutorialDataService = {
     update,
     remove,
     removeAll,
-    getPublished
+    getPublished,
+    findByTitle
   };
 export default TutorialDataService;

@@ -45,10 +45,10 @@ const TutorialsList = () => {
       });
   };
 
-//   const findByTitle = () => {
-//     refreshData();
-//     dispatch(findTutorialsByTitle(searchTitle));
-//   };
+  const findByTitle = () => {
+    refreshData();
+    dispatch(findTutorialsByTitle(searchTitle));
+  };
 
   return (
     <div className="list row">
@@ -61,7 +61,7 @@ const TutorialsList = () => {
           value={searchTitle}
           onChange={onChangeSearchTitle}
         />
-        {/* <div className="input-group-append">
+        <div className="input-group-append">
           <button
             className="btn btn-outline-secondary"
             type="button"
@@ -69,7 +69,7 @@ const TutorialsList = () => {
           >
             Search
           </button>
-        </div> */}
+        </div>
       </div>
     </div>
     <div className="col-md-6">
